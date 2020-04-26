@@ -5,7 +5,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: '主页', home: new RandomWords());
+    return MaterialApp(
+        title: '主页',
+        theme: new ThemeData(
+          primaryColor: Colors.white
+        ),
+        home: new RandomWords()
+    );
   }
 }
 class RandomWords extends StatefulWidget {
@@ -36,13 +42,44 @@ class RandomWordsState extends State<RandomWords> {
     return new ListTile(
       title: new Text(pair.asPascalCase, style: _biggerFont,),
       trailing: new Icon(alreadySaved ? Icons.favorite : Icons.favorite_border, color: alreadySaved ? Colors.red : null,),
+      onTap: () {
+        setState(() {
+        if (alreadySaved) {
+        _saved.remove(pair);
+        } else {
+        _saved.add(pair);
+        }
+        });
+      }
     );
   }
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(builder: (context) {
+        final tiles = _saved.map((pair){
+          return new ListTile(title: new Text(pair.asPascalCase, style: _biggerFont,),);
+        });
+        final divided = ListTile.divideTiles(tiles: tiles, context: context).toList();
+        return new Scaffold(
+          appBar: new AppBar(title: new Text('收藏名字'),),
+          body: new ListView(children: divided,),
+        );
+      })
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      appBar: new AppBar(title: new Text('Startup Name Generator')),
+      appBar: new AppBar(
+        title: new Text('自动生成名字'),
+        centerTitle: true,
+        actions: <Widget>[
+          new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved)
+        ],
+      ),
       body: _buildSuggestions(),
     );
   }
