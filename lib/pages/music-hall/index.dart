@@ -8,12 +8,19 @@ class MusicHall extends StatefulWidget {
 }
 
 class MusicHallState extends State<MusicHall> {
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Text("音乐馆"),
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Stack(
+            children: <Widget>[
+              Text("音乐馆")
+            ],
+          )
+        ],
+      ),
     );
   }
 }

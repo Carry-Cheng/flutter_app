@@ -4,6 +4,7 @@ import '../pages/music-hall/index.dart';
 import '../pages/recommend/index.dart';
 import '../pages/dynamic/index.dart';
 import '../pages/my/index.dart';
+import '../config/index.dart';
 class Orange extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => new OrangeState();
@@ -25,22 +26,22 @@ class OrangeState extends State<Orange> {
 //            unselectedItemColor: Color.fromRGBO(232, 232, 232, 1),
             items: [
               BottomNavigationBarItem(
-                backgroundColor: Colors.pink,
+                backgroundColor: AppColor.themeNavBarBackground,
                 icon: Icon(Icons.audiotrack),
                 title: Text("音乐馆"),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.pink,
+                backgroundColor: AppColor.themeNavBarBackground,
                 icon: Icon(Icons.favorite_border),
                 title: Text("推荐"),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.pink,
+                backgroundColor: AppColor.themeNavBarBackground,
                 icon: Icon(Icons.camera),
                 title: Text("动态"),
               ),
               BottomNavigationBarItem(
-                backgroundColor: Colors.pink,
+                backgroundColor: AppColor.themeNavBarBackground,
                 icon: Icon(Icons.account_circle),
                 title: Text("我的"),
               ),
@@ -53,12 +54,23 @@ class OrangeState extends State<Orange> {
             },
         ),
         body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: ExactAssetImage('assets/images/theme_background_1.png'),
-                fit: BoxFit.cover
-              )
-            ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    AppColor.themeGradient1,
+                    AppColor.themeGradient2,
+                    AppColor.themeGradient3
+                  ]
+                )
+              ),
+//            decoration: BoxDecoration(
+//              image: DecorationImage(
+//                image: ExactAssetImage('assets/images/theme_background_2.png'),
+//                fit: BoxFit.cover
+//              )
+//            ),
             child: _pages[_currentIndex],
         ),
     );
