@@ -5,6 +5,6 @@ import './application.dart';
 
 void main() {
   /// 打开视觉调试开关
-  debugPaintSizeEnabled = true;
+//  debugPaintSizeEnabled = true;
   runApp(Application());
 }

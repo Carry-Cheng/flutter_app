@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/components/theme-header/header.dart';
 class Dynamic extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -12,8 +13,16 @@ class DynamicState extends State<Dynamic> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Text("动态"),
+    return Flex(
+      direction: Axis.vertical,
+      children: <Widget>[
+        ThemeHeader(
+          themeName: '动态',
+          onClickRightIcon: () {
+            print('onClickRightIcon 动态');
+          },
+        ),
+      ],
     );
   }
 }

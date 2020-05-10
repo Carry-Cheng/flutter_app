@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:math' as Math;
 // import pages
 import '../pages/music-hall/index.dart';
 import '../pages/recommend/index.dart';
@@ -16,6 +18,12 @@ class OrangeState extends State<Orange> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+    //    SystemChrome.setEnabledSystemUIOverlays([]);
+//    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+//    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+    /// 状态栏高度
+    EdgeInsets padding = MediaQuery.of(context).padding;
+    double top = Math.max(padding.top, EdgeInsets.zero.top);
     return Scaffold(
         bottomNavigationBar: new BottomNavigationBar(
             elevation: 0,
@@ -53,26 +61,40 @@ class OrangeState extends State<Orange> {
                 });
             },
         ),
-        body: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    AppColor.themeGradient1,
-                    AppColor.themeGradient2,
-                    AppColor.themeGradient3
-                  ]
-                )
-              ),
+        body: Flex(
+          direction: Axis.vertical,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              height: top,
+              color: AppColor.themeStatusBarBackground,
+            ),
+            Expanded(
+              child: Container(
+                color: AppColor.themeBackground,
+//                decoration: BoxDecoration(
+//                  /// 渐变颜色
+//                    gradient: LinearGradient(
+//                        begin: Alignment.topCenter,
+//                        end: Alignment.bottomCenter,
+//                        colors: [
+//                          AppColor.themeGradient1,
+//                          AppColor.themeGradient2,
+//                          AppColor.themeGradient3
+//                        ]
+//                    )
+//                ),
 //            decoration: BoxDecoration(
 //              image: DecorationImage(
 //                image: ExactAssetImage('assets/images/theme_background_2.png'),
 //                fit: BoxFit.cover
 //              )
 //            ),
-            child: _pages[_currentIndex],
-        ),
+                child: _pages[_currentIndex],
+              ),
+            )
+          ],
+        )
     );
   }
 }
