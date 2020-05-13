@@ -14,7 +14,13 @@ class Orange extends StatefulWidget {
 
 class OrangeState extends State<Orange> {
   int _currentIndex = 0;
-  List _pages = [new MusicHall(), new Recommend(), new Dynamic(), new My()];
+  List<Widget> _pages = new List();
+  OrangeState() {
+    _pages.add(new MusicHall());
+    _pages.add(new Recommend());
+    _pages.add(new Dynamic());
+    _pages.add(new My());
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -72,25 +78,10 @@ class OrangeState extends State<Orange> {
             Expanded(
               child: Container(
                 color: AppColor.themeBackground,
-//                decoration: BoxDecoration(
-//                  /// 渐变颜色
-//                    gradient: LinearGradient(
-//                        begin: Alignment.topCenter,
-//                        end: Alignment.bottomCenter,
-//                        colors: [
-//                          AppColor.themeGradient1,
-//                          AppColor.themeGradient2,
-//                          AppColor.themeGradient3
-//                        ]
-//                    )
-//                ),
-//            decoration: BoxDecoration(
-//              image: DecorationImage(
-//                image: ExactAssetImage('assets/images/theme_background_2.png'),
-//                fit: BoxFit.cover
-//              )
-//            ),
-                child: _pages[_currentIndex],
+                child: IndexedStack(
+                  index: _currentIndex,
+                  children: _pages,
+                ),
               ),
             )
           ],
