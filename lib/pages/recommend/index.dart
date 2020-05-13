@@ -35,51 +35,301 @@ class RecommendState extends State<Recommend> {
                 ),),
               ),
               Container(
-                height: 200,
+                height: 150,
+                padding: EdgeInsets.only(bottom: 20),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     Container(
-                      width: 120.0,
-                      margin: EdgeInsets.only(right: 20),
-                      child: Flex(
-                        direction: Axis.vertical,
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
                         children: <Widget>[
-                          Image(width: 120, height: 120, image: AssetImage('assets/images/girls/girl3.png'), ),
-                          Container(padding: EdgeInsets.all(5),),
-                          Text('根据你的口味定制', style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w400, color: Colors.white
-                          ),)
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl6.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('根据你的口味定制', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('个性电台', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
                         ],
-                      )
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl7.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('每日专属推荐', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('每日30首', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl2.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('每周专属新歌', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('新歌推荐', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl3.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('一周听新歌', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('新歌周榜', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl4.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('4月听歌排行', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('听歌月榜', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+                      child: Stack(
+                        alignment: Alignment.topCenter,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/girls/girl5.png')
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('K歌不停', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('好音乐正流行', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
-              Container(color: Colors.yellow, width: 50.0, height: 50.0,),
-              Container(color: Colors.green, width: 50.0, height: 50.0,),
-              Container(color: Colors.blue, width: 50.0, height: 50.0,),
-              Container(color: Colors.black, width: 50.0, height: 50.0,),
-              Container(color: Colors.red, width: 50.0, height: 50.0,),
-              Container(color: Colors.yellow, width: 50.0, height: 50.0,),
-              Container(color: Colors.green, width: 50.0, height: 50.0,),
-              Container(color: Colors.blue, width: 50.0, height: 50.0,),
-              Container(color: Colors.black, width: 50.0, height: 50.0,),
-              Container(color: Colors.red, width: 50.0, height: 50.0,),
-              Container(color: Colors.yellow, width: 50.0, height: 50.0,),
-              Container(color: Colors.green, width: 50.0, height: 50.0,),
-              Container(color: Colors.blue, width: 50.0, height: 50.0,),
-              Container(color: Colors.black, width: 50.0, height: 50.0,),
-              Container(color: Colors.red, width: 50.0, height: 50.0,),
-              Container(color: Colors.yellow, width: 50.0, height: 50.0,),
-              Container(color: Colors.green, width: 50.0, height: 50.0,),
-              Container(color: Colors.blue, width: 50.0, height: 50.0,),
-              Container(color: Colors.black, width: 50.0, height: 50.0,),
-              Container(color: Colors.red, width: 50.0, height: 50.0,),
-              Container(color: Colors.yellow, width: 50.0, height: 50.0,),
-              Container(color: Colors.green, width: 50.0, height: 50.0,),
-              Container(color: Colors.blue, width: 50.0, height: 50.0,),
-              Container(color: Colors.black, width: 50.0, height: 50.0,),
+              Container(
+                height: 30,
+                margin: EdgeInsets.only(top: 10),
+                alignment: Alignment.topLeft,
+                child: Text('最近常听', style: TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white
+                )),
+              ),
+              Container(
+                height: 150,
+                margin: EdgeInsets.only(top: 10),
+                alignment: Alignment.topLeft,
+//                color: Colors.red,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Container(
+                      width: 110,
+                      margin: EdgeInsets.only(right: 5),
+//                      color: Colors.green,
+                      child: Stack(
+                        alignment: Alignment.topLeft,
+                        children: <Widget>[
+                          Container(
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: <Widget>[
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25),
+                                      image: DecorationImage(
+                                          image: ExactAssetImage('assets/images/recently/douyin.png'),
+                                          fit: BoxFit.fill
+                                      )
+                                  ),
+                                ),
+                                Container(padding: EdgeInsets.only(top: 5),),
+                                Text('根据你的口味定制', style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                                ),),
+                              ],
+                            ),
+                          ),
+                          Positioned(
+                            width: 110,
+                            top: 80,
+                            left: 0,
+                            child: Text('个性电台', style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w400, color: Colors.white
+                            ),textAlign: TextAlign.center,),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
